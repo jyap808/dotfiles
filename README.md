@@ -1,4 +1,4 @@
-dotfiles
+Julian's dotfiles
 ========
 
-My dotfiles
+My dotfiles from scratch.
