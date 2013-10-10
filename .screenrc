@@ -5,4 +5,6 @@ vbell_msg "beep"
 # hardstatus on
 hardstatus alwayslastline
 hardstatus string "%{.bW}%-w%{.rW}%f%n %t%{-}%+w %=%{..G}[%H %l] %{..Y} %m/%d %c "
+# change command character from ctrl-a to ctrl-b
+escape ^Bb
 
