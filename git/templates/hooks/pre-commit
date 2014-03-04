@@ -1,0 +1,17 @@
+#!/bin/sh
+#
+# A git hook to make sure user.email exists before committing to a Github repo
+
+LOCAL_GITHUB_REPO=$(git config --local remote.origin.url | grep github)
+LOCAL_EMAIL=$(git config --local user.email)
+
+if [ -z "$LOCAL_EMAIL" ] && [ "$LOCAL_GITHUB_REPO" ] ; then  
+    # user.email is empty and Github repo
+    echo "ERROR: [pre-commit hook] user.email is missing for this Github repo."
+    echo "Configure user.email for this repository by running:"
+    echo "    git config user.email name@example.com"
+    exit 1
+else  
+    # user.email is not empty
+    exit 0
+fi  
